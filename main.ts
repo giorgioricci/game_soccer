@@ -20,12 +20,17 @@ basic.forever(function () {
     if (giocatore.isTouching(porta)) {
         music.playTone(988, music.beat(BeatFraction.Eighth))
         game.addScore(1)
+        giocatore.delete()
+        porta.delete()
         giocatore = game.createSprite(randint(0, 4), 4)
+        porta = game.createSprite(randint(0, 4), 0)
     } else {
         giocatore.delete()
+        porta.delete()
         music.playTone(131, music.beat(BeatFraction.Eighth))
         basic.showIcon(IconNames.No)
         giocatore = game.createSprite(randint(0, 4), 4)
+        porta = game.createSprite(randint(0, 4), 0)
     }
     if (game.score() == 10) {
         game.gameOver()
