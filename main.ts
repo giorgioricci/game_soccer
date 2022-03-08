@@ -12,9 +12,9 @@ game.setScore(0)
 let porta = game.createSprite(randint(0, 4), 0)
 giocatore = game.createSprite(randint(0, 4), 4)
 basic.forever(function () {
-    music.setVolume(20)
+    music.setVolume(1)
     for (let index = 0; index < 5; index++) {
-        basic.pause(300)
+        basic.pause(500)
         giocatore.change(LedSpriteProperty.Y, -1)
     }
     if (giocatore.isTouching(porta)) {
